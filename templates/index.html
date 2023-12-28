@@ -1,0 +1,73 @@
+{%extends 'base.html' %}
+
+{%block head%}
+
+
+
+
+{%endblock%}
+
+
+{%block body%}
+
+<section class="container">
+    <header><b><i>ENTER  YOUR   DETAILS</i></b></header>
+    <center><i><b>Enter the detail to get who will exit or not</b></i></center>
+    <form method="POST" action="/predict" class="form">
+      
+      <div class="input-box">
+        <div class="select-box">
+            <select name="salary">
+                <option hidden>Salary</option>
+                <option>1.0</option>
+                <option>2.0</option>
+                <option>3.0</option>
+              </select>
+      </div>
+      <div class="column">
+        <div class="input-box">
+          <input type="number" placeholder="number of projects" name="number of projects" required />
+        </div></div>
+        <div class="column">
+            <div class="input-box">
+              <input type="number" placeholder="Average monthly hours" name="Average monthly hours" required />
+            </div></div>
+            <div class="column">
+                <div class="input-box">
+                  <input type="text" placeholder="Satisfaction level" name="Satisfaction level" required />
+                </div></div>
+        </div></div>
+       
+            <div class="input-box">
+                <input type="number" placeholder="Years spend in the company" name="Years spend in the company" required />
+              </div></div>
+              
+    </div></div>
+    <div class="input-box">
+        <div class="select-box">
+            <select name="Work Accident">
+                <option hidden>Work Accident</option>
+                <option>0</option>
+                <option>1</option>
+                
+              </select>
+      </div>
+     
+      <div class="input-box">
+        <div class="select-box">
+            <select name="Promotion in last five year">
+                <option hidden>Promotion in last five year</option>
+                <option>0</option>
+                <option>1</option>
+                
+              </select>
+      </div>
+      </div>
+      
+      
+      <button type='submit'><b>PREDICT</b></button>
+      <br><h2><b>{{pred}}</br></h2></b>
+    </form>
+  </section>
+  
+{%endblock%}
